@@ -1,0 +1,93 @@
+.mainWrap,
+.mainwrap {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: #1c1e24;
+}
+
+.aside {
+  background: #1c1e24;
+  padding: 16px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-right: 1px solid #282a36;
+  height: 100vh;
+}
+
+.asideInner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.logo {
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #282a36;
+}
+
+.logo-text {
+  color: #4aed88;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.aside h3 {
+  color: #9ca3af;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.clientsList,
+.clients-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.aside .btn {
+  width: 100%;
+}
+
+.copyBtn {
+  background: #ffffff;
+  color: #1c1e24;
+  margin-bottom: 10px;
+}
+
+.copyBtn:hover {
+  background: #e5e7eb;
+}
+
+.leaveBtn {
+  background: #4aed88;
+  color: #1c1e24;
+}
+
+.leaveBtn:hover {
+  background: #38cc72;
+}
+
+.editorWrap,
+.editorwrap {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: #1c1e24;
+  display: flex;
+  flex-direction: column;
+}

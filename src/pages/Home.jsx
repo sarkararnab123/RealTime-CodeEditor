@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import toast from 'react-hot-toast';
 import { v4 as uuidv4 } from 'uuid';
 import { useNavigate } from 'react-router-dom';
+import './Home.css';
 
 const Home = () => {
 
@@ -29,7 +30,7 @@ const Home = () => {
 
     }
 
-    const handleInputEnter = ()=>{
+    const handleInputEnter = (e)=>{
         if(e.code ==="Enter"){
             joinRoom()
 
