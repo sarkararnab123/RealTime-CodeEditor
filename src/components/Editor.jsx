@@ -1,40 +1,34 @@
-import React, { useEffect, useRef } from 'react';
-import Codemirror from 'codemirror';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/theme/dracula.css';
+import React, { useEffect } from 'react'
+import codemirror from 'codemirror';
 import 'codemirror/mode/javascript/javascript';
-import 'codemirror/addon/edit/closetag';
-import 'codemirror/addon/edit/closebrackets';
-import './Editor.css';
+import 'codemirror/theme/dracula.css';
+import "codemirror/addon/edit/closebrackets";
+import "codemirror/addon/edit/closetag";
+import "codemirror/lib/codemirror.css";
 
 const Editor = () => {
-    const editorRef = useRef(null);
 
-    useEffect(() => {
-        async function init() {
-            const textareaEl = document.getElementById('realtimeEditor');
-            if (textareaEl && !editorRef.current) {
-                try {
-                    editorRef.current = Codemirror.fromTextArea(textareaEl, {
-                        mode: { name: 'javascript', json: true },
-                        theme: 'dracula',
-                        autoCloseTags: true,
-                        autoCloseBrackets: true,
-                        lineNumbers: true,
-                    });
-                } catch (error) {
-                    console.error("CodeMirror initialization error:", error);
-                }
+    try {
+        useEffect(() => {
+            async function init() {
+                codemirror.fromTextArea(document.getElementById('realtimeEditor'), {
+                    mode: { name: 'javascript', json: true },
+                    theme: 'dracula',
+                    autoCloseTags: true,
+                    lineNumbers: true,
+                    autoCloseBrackets: true
+                })
             }
-        }
-        init();
-    }, []);
+            init()
+        }, [])
+    } catch (error) {
+        console.log(error.message)
 
+    }
     return (
-        <div className="editor-container">
-            <textarea id="realtimeEditor"></textarea>
-        </div>
-    );
-};
+        <textarea id='realtimeEditor'></textarea>
 
-export default Editor;
+    )
+}
+
+export default Editor
