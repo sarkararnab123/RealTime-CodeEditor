@@ -61,7 +61,20 @@ const EditorPage = () => {
         };
     }, []);
 
-    // Redirect to home if user tries to access /editor/:roomId without state from Home page
+    async function copyRoomId() {
+        try {
+            await navigator.clipboard.writeText(roomId);
+            toast.success('Room ID has been copied to your clipboard');
+        } catch (err) {
+            toast.error('Could not copy Room ID');
+            console.error(err);
+        }
+    }
+
+    function leaveRoom() {
+        reactNavigate('/');
+    }
+
     if (!location.state) {
         return <Navigate to="/" />;
     }
@@ -80,8 +93,12 @@ const EditorPage = () => {
                         ))}
                     </div>
                 </div>
-                <button className="btn copyBtn">Copy ROOM ID</button>
-                <button className="btn leaveBtn">Leave</button>
+                <button className="btn copyBtn" onClick={copyRoomId}>
+                    Copy ROOM ID
+                </button>
+                <button className="btn leaveBtn" onClick={leaveRoom}>
+                    Leave
+                </button>
             </div>
             <div className="editorWrap">
                 <Editor />
