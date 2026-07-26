@@ -1,39 +1,13 @@
 {
   "name": "code-editor",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "server:dev": "nodemon server.js",
-    "server:prod": "node server.js",
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "codemirror": "^5.65.16",
-    "cors": "^2.8.6",
-    "express": "^5.2.1",
-    "react": "^19.2.7",
-    "react-avatar": "^5.0.4",
-    "react-dom": "^19.2.7",
-    "react-hot-toast": "^2.6.0",
-    "react-router-dom": "^7.18.1",
-    "socket.io": "^4.8.3",
-    "socket.io-client": "^4.8.3",
-    "uuid": "^14.0.1"
-  },
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "@types/react": "^19.2.17",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^6.0.3",
-    "eslint": "^10.6.0",
-    "eslint-plugin-react-hooks": "^7.1.1",
-    "eslint-plugin-react-refresh": "^0.5.3",
-    "globals": "^17.7.0",
-    "nodemon": "^3.1.14",
-    "vite": "^8.1.1"
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "build:client": "npm --prefix client run build",
+    "start:server": "npm --prefix server start",
+    "install:all": "npm install --prefix client && npm install --prefix server"
   }
 }
