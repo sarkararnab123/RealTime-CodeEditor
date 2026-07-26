@@ -9,4 +9,4 @@ export const initSocket = async () => {
     };
     const backendUrl = "http://localhost:5000";
     return io(backendUrl, options);
-};
+}
